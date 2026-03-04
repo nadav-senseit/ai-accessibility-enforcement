@@ -26,6 +26,11 @@ The AI will then:
 - apply bounded accessibility fixes
 - report remaining risks
 
+⚠️ Experimental Prompt
+This prompt is part of an experiment exploring whether accessibility guardrails can be applied during AI-generated UI development.
+It does **not guarantee accessibility compliance** and should not replace accessibility testing or expert review.
+The goal is to reduce high-risk accessibility failures earlier in AI-assisted development workflows.
+
 ---
 
 ## Copy the prompt below
