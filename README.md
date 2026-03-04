@@ -137,7 +137,7 @@ This experiment only explores whether **AI generation can be guided toward safer
 Prompt file:
 
 ~~~
-prompt/enforcement-mode.md
+[Open the prompt](prompt/enforcement-mode.md)
 ~~~
 
 Use it when:
@@ -209,3 +209,7 @@ Useful feedback includes:
 - Whether something like this would be useful in your workflow
 
 Feel free to open an issue or discussion.
+
+---
+
+Maintained by the team at **Senseit**, exploring infrastructure approaches to accessibility in AI-generated interfaces.
