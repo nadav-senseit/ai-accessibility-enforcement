@@ -2,7 +2,8 @@
 
 Experiment: enforcing accessibility guardrails in AI-generated interfaces (Cursor, Lovable, Base44, Claude Code) using prompt-level instructions.
 
-!Early experiment. Real-world tests and feedback are extremely valuable.
+⚠️ Early experiment. Real-world tests and feedback are extremely valuable.
+
 ---
 
 ## What this experiment does
