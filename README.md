@@ -2,6 +2,7 @@
 
 Experiment: enforcing accessibility guardrails in AI-generated interfaces (Cursor, Lovable, Base44, Claude Code) using prompt-level instructions.
 
+⚠️ Early experiment. Real-world tests and feedback are extremely valuable.
 ---
 
 ## What this experiment does
@@ -25,6 +26,23 @@ The goal is **reducing accessibility risk during AI-assisted development**.
 
 ---
 
+## How the enforcement loop works
+
+When enforcement mode runs, the AI follows a simple loop:
+
+1. Identify critical flows (e.g., login, checkout, settings modal)
+2. Evaluate key accessibility areas:
+   - keyboard access
+   - focus behavior
+   - labels
+   - semantic structure
+3. Apply bounded fixes
+4. Produce a short report:
+   - what changed
+   - what remains risky
+
+---
+
 ## Example
 
 ### Without enforcement
@@ -43,15 +61,55 @@ Problems:
 
 ~~~html
 <button aria-label="Open settings">
-  <svg></svg>
+  <svg aria-hidden="true"></svg>
 </button>
 ~~~
 
 Fix applied:
 
 - Accessible label added
+- Decorative SVG hidden from screen readers
 - Control becomes understandable to assistive technologies
 - No visual change required
+
+## Example: modal focus management
+
+AI-generated modals often miss keyboard support.
+
+### Before
+
+~~~html
+<div class="modal">
+  <button>X</button>
+  <input placeholder="Email">
+</div>
+~~~
+
+Problems:
+
+- No dialog role
+- No focus management expectations
+- Screen reader context unclear
+
+### With enforcement mode
+
+~~~html
+<div role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <h2 id="modal-title">Subscribe</h2>
+
+  <button aria-label="Close dialog">×</button>
+
+  <label for="email">Email</label>
+  <input id="email" type="email">
+</div>
+~~~
+
+Fix applied:
+
+- Dialog semantics added
+- Accessible name provided
+- Form label added
+- Focus behavior becomes predictable for assistive technology
 
 ---
 
@@ -99,6 +157,7 @@ The enforcement instructions focus on a small set of high-impact areas:
 - Accessible labeling
 - Semantic HTML structure
 - Avoiding unnecessary ARIA
+- Bounded changes + short report (so developers can review diffs)
 
 These issues represent a large portion of real accessibility failures in generated interfaces.
 
@@ -121,8 +180,9 @@ Fixes applied:
 ✔ Replaced ARIA button with native button
 
 Remaining risks:
-- Color contrast not evaluated
+- Contrast/reflow may require manual review (brand/layout sensitive)
 - Screen reader testing recommended
+- Complex components may require APG-aligned implementation
 ~~~
 
 ---
