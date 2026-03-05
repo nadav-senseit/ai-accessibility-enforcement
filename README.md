@@ -137,9 +137,7 @@ This experiment only explores whether **AI generation can be guided toward safer
 
 Prompt file:
 
-~~~
 [Open the prompt](prompt/enforcement-mode.md)
-~~~
 
 Use it when:
 
