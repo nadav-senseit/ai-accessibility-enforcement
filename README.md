@@ -196,6 +196,31 @@ This experiment explores whether accessibility guidance can become part of **the
 
 ---
 
+## Why the prompt looks like this
+
+Accessibility Enforcement Mode did not appear fully formed.
+
+It evolved through multiple iterations while testing AI coding tools such as Cursor, Lovable, and Claude Code.
+
+During testing we repeatedly observed several failure modes:
+
+• accessibility hallucinations  
+• uncontrolled code refactors  
+• invented ARIA behaviors  
+• false WCAG compliance claims  
+• accessibility fixes drifting into UI redesign
+
+Each rule in the prompt was introduced to address one of these patterns.
+
+Over time the system evolved into a **controlled remediation protocol** designed to reduce accessibility risk during AI-assisted development.
+
+Instead of behaving like a generative assistant that freely rewrites code, the AI is guided to behave more like a cautious accessibility engineer performing staged remediation.
+
+If you're interested in the reasoning behind each guardrail and how the system evolved:
+
+→ See [**EVOLUTION.md**](EVOLUTION.md) for the full retrospective.
+
+---
 ## Feedback welcome
 
 If you try this experiment, feedback is extremely valuable.
