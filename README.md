@@ -236,4 +236,37 @@ Feel free to open an issue or discussion.
 
 ---
 
+## Version History
+
+### v1.1.4 (Current)
+
+Improvements to guardrails, reporting structure, and standards alignment.
+
+Changes:
+
+• Added guidance to reference WCAG Success Criteria when identifying issues  
+• Improved stability guardrails to reduce runaway edits in AI tools  
+• Clarified contrast handling to avoid unintended design system changes  
+• Expanded output requirements (issues list, WCAG references, prioritized backlog)  
+• Improved complex component guidance to avoid unsafe ARIA role introduction  
+• Strengthened batch-edit scope rules tied to critical user flows  
+
+This version improves the prompt’s ability to produce **traceable, defensible accessibility fixes** while remaining safe for AI-assisted development environments.
+
+---
+
+### v1.0
+
+Initial experimental release.
+
+Focus:
+
+• Hard-gated enforcement modes  
+• Critical user flow prioritization  
+• High-weight accessibility risk categories  
+• Guardrails to prevent unsafe automated changes
+
+---
+
 Maintained by the team at **Senseit**, exploring infrastructure approaches to accessibility in AI-generated interfaces.
+
