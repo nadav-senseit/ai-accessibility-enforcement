@@ -10,6 +10,19 @@ If you only want to try the system, start here:
 
 ---
 
+# Why This Document Exists
+
+Accessibility Enforcement Mode was not designed in a single step.
+
+It evolved through repeated testing of AI coding tools (Cursor, Lovable, Claude Code) where we observed how models behave when asked to "fix accessibility."
+
+This document records the reasoning behind the guardrails in the prompt.
+
+It is not required to use the system.  
+It exists for developers who want to understand *why the rules exist*.
+
+---
+
 # Version Timeline
 
 v0.1 — Initial experiments with AI remediation  
@@ -300,6 +313,25 @@ This suggests the prompt functions as a form of:
 **session-level education.**
 
 Once activated, accessibility becomes a default design constraint for the rest of the AI session.
+
+---
+
+Phase 11 — Field Experiment
+
+After internal testing, the prompt was published publicly as an experiment to evaluate whether accessibility enforcement could operate inside real AI development workflows.
+
+The goal of this phase is not reach or marketing.
+
+The goal is learning.
+
+Specifically:
+
+• how different AI coding tools interpret the enforcement rules
+• whether developers actually use the staged remediation model
+• which accessibility issues models fix reliably
+• where models hallucinate or introduce risk
+
+Feedback from this experiment will inform the next generation of accessibility infrastructure inside development workflows.
 
 ---
 
